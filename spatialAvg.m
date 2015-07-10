@@ -4,13 +4,13 @@ function outImg1 = spatialAvg(inImg,blurSize)
 % command
 
 % Usage
-%   outImg = spatialAvg(inImg, blurSize)
+%   outImg1 = spatialAvg(inImg, blurSize)
 % 
-% SUPER SLOW - READ MORE PROGRAMMING BOOKS AND REVISE - AEM 6/25/15
+% AEM 6/25/15 - SUPER SLOW - READ MORE PROGRAMMING BOOKS AND REVISE  
 %
-% just kidding ITS NOW FAST - Better programming... - AEM 7/7/15
-% all old code moved to end under "old stuff"
-% removed outImg2 from output variables 
+% AEM 7/7/15 - Just kidding ITS NOW FAST - Better programming... 
+% - all old code moved to end under "old stuff"
+% - removed outImg2 from output variables 
 %  
 
 %% Check to make sure blursize is odd...
