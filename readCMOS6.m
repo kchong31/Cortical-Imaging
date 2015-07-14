@@ -23,7 +23,7 @@ function [cmosData, AnaIn1, AnaIn2, StmTrg, fpath] = readCMOS6(fileName)
 %% Read file-list from .rsh file
 % Find the path of .rsh (head file)
 % [fileName,pathName] = uigetfile('*.rsh','Select the rsh file');
-pathName = '/Users/AMmacbookpro/Documents/MATLAB/';
+pathName = '/Volumes/PC_MAC/DJlab/vsfp_imaging/VSFP_713_2015/';
 fpath = [pathName fileName];
 % Read the file
 fid=fopen(fpath,'r','b');        

@@ -61,10 +61,10 @@ disp('Processing 5th file')
  outFilt = imageDR0filt+imageDR1filt+imageDR2filt+imageDR3filt+imageDR4filt;
  outROI = imageDR0ROI+imageDR1ROI+imageDR2ROI+imageDR3ROI+imageDR4ROI;
  
- imagefilt(1,:) = squeeze(imageDR0filt(60,70,1:2000));
- imagefilt(2,:) = squeeze(imageDR1filt(60,70,1:2000));
- imagefilt(3,:) = squeeze(imageDR2filt(60,70,1:2000));
- imagefilt(4,:) = squeeze(imageDR3filt(60,70,1:2000));
- imagefilt(5,:) = squeeze(imageDR4filt(60,70,1:2000));
+ imagefilt(1,:) = squeeze(imageDR0filt(60,70,1:1000));
+ imagefilt(2,:) = squeeze(imageDR1filt(60,70,1:1000));
+ imagefilt(3,:) = squeeze(imageDR2filt(60,70,1:1000));
+ imagefilt(4,:) = squeeze(imageDR3filt(60,70,1:1000));
+ imagefilt(5,:) = squeeze(imageDR4filt(60,70,1:1000));
  
  

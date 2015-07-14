@@ -7,14 +7,15 @@ function [imgs, time] = preProcVSFP(fDate, fNum)
 %
 
 %% Doing initial loading and stuff
+% cd /Volumes/PC_MAC/DJlab/vsfp_imaging/VSFP_713_2015/
 imgD = readCMOS6(['VSFP_01A0' num2str(fDate) '-' num2str(fNum) '_A.rsh']);
 imgA = readCMOS6(['VSFP_01A0' num2str(fDate) '-' num2str(fNum) '_B.rsh']);
-
+% cd /Users/AMmacbookpro/GitHub/Cortical-Imaging/
 % Start timer
 tic 
 
 % How many frames are in each sequence (for me usually 2048)
-numFrames = 2048;
+[~,~,numFrames] = size(imgA);
 
 % Time array (sampling at 5 msec = 0.005 sec)
 time = (1:numFrames).*0.005; % array in seconds
@@ -34,32 +35,32 @@ FsImg = 200;
 hemfilter = make_ChebII_filter(1, FsImg, [10 15], [10*0.9 15*1.1], 20);
 myfilter1 = make_ChebII_filter(2, FsImg, 50, 55, 20);
 % Preallocate for speed :)
-imgAhem = ones(100,100,2048);
-imgDhem = ones(100,100,2048);
+imgAhem = ones(100,100,numFrames);
+imgDhem = ones(100,100,numFrames);
 stdA = ones(100,100);
 stdD = ones(100,100);
 gamma = ones(100,100);
 delta = ones(100,100);
-imgAe = ones(100,100,2048);
-imgDe = ones(100,100,2048);
-imgDiv = ones(100,100,2048);
+imgAe = ones(100,100,numFrames);
+imgDe = ones(100,100,numFrames);
+imgDiv = ones(100,100,numFrames);
 avgAe = ones(100,100);
 avgDe = ones(100,100);
 avgDiv = ones(100,100);
-imgDivDemean = ones(100,100,2048);
-imgDivDetrend =  ones(100,100,2048);
-imgDivFilt = ones(100,100,2048);
-imgDR = ones(100,100,2048);
+imgDivDemean = ones(100,100,numFrames);
+imgDivDetrend =  ones(100,100,numFrames);
+imgDivFilt = ones(100,100,numFrames);
+imgDR = ones(100,100,numFrames);
 af0 = ones(100,100);
 df0 = ones(100,100);
-imgAf = ones(100,100,2048);
-imgDf = ones(100,100,2048);
+imgAf = ones(100,100,numFrames);
+imgDf = ones(100,100,numFrames);
 % imgDivMax = ones(100,100);
-imgDivNorm = ones(100,100,2048);
+imgDivNorm = ones(100,100,numFrames);
 avgAf = ones(100,100);
 avgDf = ones(100,100);
-imgDiffA = ones(100,100,2048);
-imgDiffD = ones(100,100,2048);
+imgDiffA = ones(100,100,numFrames);
+imgDiffD = ones(100,100,numFrames);
 i = 0;
 % figure, hold on
 progbar = waitbar(0, 'Processing Images...');
